@@ -5,7 +5,7 @@ import { FC } from "~types";
 
 const V0017: FC = () => (
   <>
-    <AnchorTitle color="#0366d6" ariaLabel="Release 0.0.12" id="0.0.12">
+    <AnchorTitle color="#0366d6" ariaLabel="Release 0.0.17" id="0.0.17">
       v0.0.17
     </AnchorTitle>
     <ReleaseNotes>
