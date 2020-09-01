@@ -30,7 +30,7 @@ const packageexports = `import compose, {
   withDefaultProps,
   withProps,
   withPropTypes,
-  withStyles
+  withStyles,
 } from "composable-styled-components"
 `;
 

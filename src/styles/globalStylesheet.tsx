@@ -173,6 +173,33 @@ export default createGlobalStyle`
     display: block;
   }
 
+  .language-javascript {
+
+    .keyword {
+      color: #03a9f3;
+    }
+
+    .function {
+      color: #57b070;
+    }
+
+    .maybe-class-name, .module, .punctuation {
+      color: #03a9f3;
+    }
+
+    .string {
+      color: #5ae4f2;
+    }
+
+    .template-string, {
+      color: #96C970;
+    }
+
+    .method, .property-access {
+      color: #ffa500;
+    }
+  }
+
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
