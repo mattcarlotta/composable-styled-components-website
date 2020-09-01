@@ -34,7 +34,7 @@
   },
   "homepage": "https://composable.mattcarlotta.sh",
   "dependencies": {
-    "composable-styled-components": "^0.0.17",
+    "composable-styled-components": "^0.0.19",
     "next": "^9.5.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
