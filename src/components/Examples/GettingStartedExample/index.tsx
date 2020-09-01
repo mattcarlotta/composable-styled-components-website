@@ -2,7 +2,7 @@ import { compose, nest, setDisplayName } from "composable-styled-components";
 import Preview from "~components/Body/Preview";
 import { FC } from "~types";
 
-const Wrapper = compose.section(setDisplayName("Wrapper"))`
+const Wrapper = compose.div(setDisplayName("Wrapper"))`
   border: 2px solid palevioletred;
   border-radius: 4px;
   padding: 10px 20px;
@@ -18,7 +18,7 @@ const Title = compose.div(setDisplayName("Title"))`
 
 const Headline = nest(Wrapper, Title);
 
-const exampleCode = `const Wrapper = compose.section(
+const exampleCode = `const Wrapper = compose.div(
   setDisplayName("Wrapper")
 )\`
   border: 3px solid palevioletred;
