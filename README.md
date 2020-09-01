@@ -1,5 +1,5 @@
 <a target="_blank" rel="noopener noreferrer" href="https://composable.mattcarlotta.sh" >
-<img src="https://raw.githubusercontent.com/mattcarlotta/composable-styled-components/master/public/composableLogo.png" alt="composable-logo.png" />
+<img src="https://i.imgur.com/W5jgmBn.png" alt="composable-logo.png" />
 </a>
 
 <div align="center">
