@@ -10,6 +10,7 @@ import Head from "~components/Navigation/Head";
 import AnchorTitle from "~components/Navigation/AnchorTitle";
 import Link from "~components/Navigation/Link";
 import OutsideLink from "~components/Navigation/OutsideLink";
+import { FC } from "~types";
 
 const preStyles = { margin: "0 0 20px" };
 
@@ -33,7 +34,7 @@ const packageexports = `import compose, {
 } from "composable-styled-components"
 `;
 
-const Documentation = () => (
+const Documentation: FC = () => (
   <>
     <Head
       title="Documentation"

@@ -1,8 +1,9 @@
 import ReleaseNotes from "~components/Body/ReleaseNotes";
 import AnchorTitle from "~components/Navigation/AnchorTitle";
 import OutsideLink from "~components/Navigation/OutsideLink";
+import { FC } from "~types";
 
-const V001 = () => (
+const V001: FC = () => (
   <>
     <AnchorTitle color="#0366d6" ariaLabel="Release 0.0.1" id="0.0.1">
       v0.0.1

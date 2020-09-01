@@ -4,9 +4,10 @@ import {
   setDisplayName,
   withStyles
 } from "composable-styled-components";
-// import PropTypes from "prop-types";
 import FlexSpaceBetween from "~components/Body/FlexSpaceBetween";
 import SyntaxHighlighter from "~components/Body/SyntaxHighlighter";
+import { PreviewProps } from "~interfaces";
+import { FC } from "~types";
 
 const SyntaxContainer = compose.div(setDisplayName("Preview"))`
   @media (max-width: 976px) {
@@ -34,7 +35,7 @@ const OutputContainer = extend(
   `)
 )(SyntaxContainer);
 
-const Preview = ({ children, code }) => (
+const Preview: FC<PreviewProps> = ({ children, code }) => (
   <FlexSpaceBetween style={{ marginTop: 10 }}>
     <SyntaxContainer>
       <SyntaxHighlighter preStyles={{ margin: "0 0 20px", height: "100%" }}>
@@ -44,10 +45,5 @@ const Preview = ({ children, code }) => (
     <OutputContainer>{children}</OutputContainer>
   </FlexSpaceBetween>
 );
-
-// Preview.propTypes = {
-//   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-//   code: PropTypes.string.isRequired
-// };
 
 export default Preview;

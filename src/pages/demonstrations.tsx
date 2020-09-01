@@ -15,8 +15,9 @@ import AnchorTitle from "~components/Navigation/AnchorTitle";
 import Head from "~components/Navigation/Head";
 import Link from "~components/Navigation/Link";
 import OutsideLink from "~components/Navigation/OutsideLink";
+import { FC } from "~types";
 
-const Demonstrations = () => (
+const Demonstrations: FC = () => (
   <>
     <Head
       title="Demonstrations"

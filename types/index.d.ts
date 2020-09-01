@@ -1,4 +1,9 @@
 import type { AppProps } from "next/app";
-import type { CSSProperties } from "react";
+import type {
+  CSSProperties,
+  FunctionComponent as FC,
+  ReactElement,
+  SyntheticEvent
+} from "react";
 
-export { AppProps, CSSProperties };
+export { AppProps, CSSProperties, FC, ReactElement, SyntheticEvent };

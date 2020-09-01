@@ -1,4 +1,5 @@
 import SyntaxHighlighter from "~components/Body/SyntaxHighlighter";
+import { FC } from "~types";
 
 const exampleCode = `const Button = compose.button(
   setDisplayName("Button"),
@@ -50,7 +51,7 @@ render(
 );
 `;
 
-const HomeExample = () => (
+const HomeExample: FC = () => (
   <SyntaxHighlighter
     preStyles={{
       width: "650px",

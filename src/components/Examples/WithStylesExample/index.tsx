@@ -7,6 +7,7 @@ import {
 } from "composable-styled-components";
 import Note from "~components/Body/Note";
 import Preview from "~components/Body/Preview";
+import { FC } from "~types";
 
 const Button = compose.button(setDisplayName("DefaultButton"))`
   background: transparent;
@@ -55,7 +56,7 @@ const DisabledButton = extend(
 
 const PrimaryButton = extend(
   setDisplayName("PrimaryButton"),
-  withStyles(props => ({
+  withStyles((props: any) => ({
     cursor: "pointer",
     backgroundColor: props.primary ? "#03a9f3" : "transparent",
     borderColor: "#03a9f3",
@@ -75,18 +76,20 @@ const PrimaryButton = extend(
 const SecondaryButton = extend(
   setDisplayName("SecondaryButton"),
   withStyles(css`
-    background: ${props => (props.danger ? "palevioletred" : "transparent")};
+    background: ${(props: any) =>
+      props.danger ? "palevioletred" : "transparent"};
     border-color: palevioletred;
-    color: ${props => (props.danger ? "#eee" : "palevioletred")};
+    color: ${(props: any) => (props.danger ? "#eee" : "palevioletred")};
 
     &:hover {
-      background: ${props => (props.danger ? "#ca5c80" : "transparent")};
-      border-color: ${props => (props.danger ? "transparent" : "#ca5c80")};
-      color: ${props => (props.danger ? "#fff" : "#ca5c80")};
+      background: ${(props: any) => (props.danger ? "#ca5c80" : "transparent")};
+      border-color: ${(props: any) =>
+        props.danger ? "transparent" : "#ca5c80"};
+      color: ${(props: any) => (props.danger ? "#fff" : "#ca5c80")};
     }
 
     &:focus {
-      color: ${props => (props.danger ? "#eee" : "palevioletred")};
+      color: ${(props: any) => (props.danger ? "#eee" : "palevioletred")};
       border-color: palevioletred;
     }
   `)
@@ -223,7 +226,7 @@ render(
   </>
 );`;
 
-const WithStyledExample = () => (
+const WithStyledExample: FC = () => (
   <>
     <Preview code={exampleCode}>
       <Button data-testid="with-styles-default-button">Default</Button>

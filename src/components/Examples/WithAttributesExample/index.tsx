@@ -5,6 +5,7 @@ import {
   withAttributes
 } from "composable-styled-components";
 import Preview from "~components/Body/Preview";
+import { FC } from "~types";
 
 const UsernameTextBox = compose.input(
   setDisplayName("UsernameTextBox"),
@@ -40,7 +41,7 @@ const UsernameTextBox = compose.input(
 
 const TextBox = extend(
   setDisplayName("TextBox"),
-  withAttributes(props => ({
+  withAttributes((props: any) => ({
     type: props.password ? "password" : props.type,
     placeholder: props.password ? "Enter password..." : props.placeholder
   }))
@@ -102,7 +103,7 @@ render(
   </>
 );`;
 
-const WithAttributesExample = () => (
+const WithAttributesExample: FC = () => (
   <Preview code={exampleCode}>
     <UsernameTextBox data-testid="attributes-username-input" />
     <TextBox data-testid="attributes-textbox-text" />

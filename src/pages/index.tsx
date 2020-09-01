@@ -7,7 +7,7 @@ import HomeExample from "~components/Examples/HomeExample";
 import Head from "~components/Navigation/Head";
 import Link from "~components/Navigation/Link";
 import OutsideLink from "~components/Navigation/OutsideLink";
-import { CSSProperties } from "~types";
+import { CSSProperties, FC } from "~types";
 
 const iconStyle: CSSProperties = {
   position: "relative",
@@ -15,7 +15,7 @@ const iconStyle: CSSProperties = {
   marginRight: 8
 };
 
-const App = () => (
+const App: FC = () => (
   <div css="text-align: center;">
     <Head title="Home" />
     <Title data-testid="title">

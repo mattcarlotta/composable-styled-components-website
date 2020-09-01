@@ -6,15 +6,18 @@ import {
 } from "composable-styled-components";
 import Note from "~components/Body/Note";
 import Preview from "~components/Body/Preview";
+import { FC } from "~types";
 
 const Button = compose.button(
   setDisplayName("Button"),
   withStyles(css`
-    background: ${props => (props.primary ? "palevioletred" : "#1e87f0")};
-    border: 1px solid ${props => (props.primary ? "palevioletred" : "#1e87f0")};
+    background: ${(props: any) =>
+      props.primary ? "palevioletred" : "#1e87f0"};
+    border: 1px solid
+      ${(props: any) => (props.primary ? "palevioletred" : "#1e87f0")};
 
     &:hover {
-      background: ${props => (props.primary ? "#ca5c80" : "#0f7ae5")};
+      background: ${(props: any) => (props.primary ? "#ca5c80" : "#0f7ae5")};
     }
 
     &:focus {
@@ -62,7 +65,7 @@ export const exampleCode = `const Button = compose.button(
   )
 );`;
 
-const CSSExample = () => (
+const CSSExample: FC = () => (
   <>
     <Preview code={exampleCode}>
       <Button data-testid="css-default-button">default button</Button>

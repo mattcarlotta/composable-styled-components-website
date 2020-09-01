@@ -4,7 +4,7 @@ const Subtitle = compose.p(setDisplayName("Subtitle"))`
   margin-bottom: 30px;
   word-wrap: break-word;
   font-size: 16px;
-  text-align: ${({ textalign }) => textalign || "center"};
+  text-align: ${(props: any) => props.textalign || "center"};
 `;
 
 export default Subtitle;

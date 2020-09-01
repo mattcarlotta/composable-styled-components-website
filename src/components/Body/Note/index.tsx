@@ -1,6 +1,8 @@
 import { compose, setDisplayName } from "composable-styled-components";
 import { FaRegLightbulb } from "react-icons/fa";
 import MiniTitle from "~components/Body/MiniTitle";
+import { NoteProps } from "~interfaces";
+import { FC } from "~types";
 
 const ComposedNote = compose.div(setDisplayName("Note"))`
   background: rgb(224, 224, 224);
@@ -11,10 +13,10 @@ const ComposedNote = compose.div(setDisplayName("Note"))`
   line-height: 25px;
 `;
 
-const Note = ({ children }) => (
+const Note: FC<NoteProps> = ({ children }) => (
   <ComposedNote>
     <MiniTitle style={{ marginTop: 0 }}>
-      <FaRegLightbulb style={{ position: "relative", top: 2 }} /> NOTE{" "}
+      <FaRegLightbulb style={{ position: "relative", top: 2 }} /> NOTE&nbsp;
     </MiniTitle>
     {children}
   </ComposedNote>

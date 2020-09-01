@@ -7,11 +7,12 @@ import {
   withAttributes
 } from "composable-styled-components";
 import Preview from "~components/Body/Preview";
+import { FC, SyntheticEvent } from "~types";
 
 const Button = compose.button(
   setDisplayName("Button"),
   withAttributes({ type: "button" }),
-  withProps(props => ({
+  withProps((props: any) => ({
     ...props,
     onClick: props.type === "button" ? () => alert("Default Button") : null
   }))
@@ -92,8 +93,8 @@ const Example = () => {
 render(<Example />);
 `;
 
-const ExtendExample = () => {
-  const handleSubmit = React.useCallback(e => {
+const ExtendExample: FC = () => {
+  const handleSubmit = React.useCallback((e: SyntheticEvent): void => {
     e.preventDefault();
     alert("Submit Button");
   }, []);

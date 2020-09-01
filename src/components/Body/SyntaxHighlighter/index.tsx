@@ -1,7 +1,11 @@
-// import PropTypes from "prop-types";
 import { Prism } from "react-syntax-highlighter";
+import { SyntaxHighlighterProps } from "~interfaces";
+import { FC } from "~types";
 
-const SyntaxHighlighter = ({ children, preStyles }) => (
+const SyntaxHighlighter: FC<SyntaxHighlighterProps> = ({
+  children,
+  preStyles
+}) => (
   <Prism
     language="javascript"
     style={{
@@ -202,12 +206,5 @@ const SyntaxHighlighter = ({ children, preStyles }) => (
     {children}
   </Prism>
 );
-
-// SyntaxHighlighter.propTypes = {
-//   children: PropTypes.string.isRequired,
-//   preStyles: PropTypes.objectOf(
-//     PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-//   )
-// };
 
 export default SyntaxHighlighter;

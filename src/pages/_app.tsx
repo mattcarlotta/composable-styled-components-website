@@ -2,9 +2,9 @@ import Head from "next/head";
 import Container from "~components/Body/Container";
 import GlobalStylesheet from "~styles/globalStylesheet";
 import Header from "~components/Navigation/Header";
-import { AppProps } from "~types";
+import { AppProps, FC } from "~types";
 
-const App = ({ Component, pageProps }: AppProps) => (
+const App: FC<AppProps> = ({ Component, pageProps }) => (
   <>
     <Head>
       <meta

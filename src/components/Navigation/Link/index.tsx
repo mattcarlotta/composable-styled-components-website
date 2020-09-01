@@ -8,8 +8,10 @@ import {
   withPropTypes,
   withStyles
 } from "composable-styled-components";
+import { LinkComponentProps } from "~interfaces";
+import { FC } from "~types";
 
-const LinkComponent = ({
+const LinkComponent: FC<LinkComponentProps> = ({
   ariaLabel,
   asHref,
   className,
@@ -34,22 +36,6 @@ const LinkComponent = ({
   </Link>
 );
 
-// LinkComponent.propTypes = {
-//   ariaLabel: PropTypes.string.isRequired,
-//   asHref: PropTypes.string,
-//   className: PropTypes.string.isRequired,
-//   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-//   dataTestId: PropTypes.string,
-//   href: PropTypes.string.isRequired,
-//   id: PropTypes.string,
-//   onClick: PropTypes.func,
-//   stopPropagation: PropTypes.bool,
-//   style: PropTypes.objectOf(
-//     PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-//   ),
-//   target: PropTypes.string
-// };
-
 const CustomLink = extend(
   setDisplayName("Link"),
   withDefaultProps({
@@ -72,38 +58,39 @@ const CustomLink = extend(
     target: PropTypes.string
   }),
   withStyles(css`
-    color: ${({ dark, light }) => {
-      if (dark) return "#036ef3";
-      if (light) return "#03a9f3";
+    color: ${(props: any) => {
+      if (props.dark) return "#036ef3";
+      if (props.light) return "#03a9f3";
       return "#000000a6";
     }};
     white-space: nowrap;
     text-decoration: none;
-    text-transform: ${({ texttransform }) => texttransform || "none"};
-    margin: ${({ margin, nomargin }) =>
-      nomargin ? "0px" : margin || "0 10px"};
+    text-transform: ${(props: any) => props.texttransform || "none"};
+    margin: ${(props: any) =>
+      props.nomargin ? "0px" : props.margin || "0 10px"};
     transition: all 200ms ease-in-out;
-    padding: ${({ nopadding }) => (nopadding ? "0" : "4px 8px")};
+    padding: ${(props: any) => (props.nopadding ? "0" : "4px 8px")};
     border-radius: 2px;
     cursor: pointer;
-    ${({ active }) =>
-      active &&
+    ${(props: any) =>
+      props.active &&
       `
       color: #f1f1f1;
       background: #0f7ae5;
     `};
 
     &:hover {
-      color: ${({ hover, light }) => (hover && light ? "#f1f1f1" : "#0f7ae5")};
-      background: ${({ hover, light }) =>
-        hover && light ? "#0f7ae5" : "transparent"};
-      text-decoration: ${({ light }) => !light && "underline"};
+      color: ${(props: any) =>
+        props.hover && props.light ? "#f1f1f1" : "#0f7ae5"};
+      background: ${(props: any) =>
+        props.hover && props.light ? "#0f7ae5" : "transparent"};
+      text-decoration: ${(props: any) => !props.light && "underline"};
     }
 
     &:focus {
-      color: ${({ dark, light }) => {
-        if (dark) return "#0f7ae5";
-        if (light) return "#f1f1f1";
+      color: ${(props: any) => {
+        if (props.dark) return "#0f7ae5";
+        if (props.light) return "#f1f1f1";
         return "#000000a6";
       }};
       outline: none;

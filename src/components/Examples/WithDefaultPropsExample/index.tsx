@@ -4,6 +4,7 @@ import {
   withDefaultProps
 } from "composable-styled-components";
 import Preview from "~components/Body/Preview";
+import { FC } from "~types";
 
 const Button = compose.button(
   setDisplayName("Button"),
@@ -76,7 +77,7 @@ render(
   </>
 );`;
 
-const WithDefaultPropsExample = () => (
+const WithDefaultPropsExample: FC = () => (
   <Preview code={exampleCode}>
     <Button data-testid="default-props-button" />
     <Button

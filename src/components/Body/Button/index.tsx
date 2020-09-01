@@ -42,13 +42,13 @@ const ComposedButton = compose.button(
   letter-spacing: 1.5px;
   outline: none;
   cursor: pointer;
-  padding: ${({ padding }) => padding || "12px 18px"};
+  padding: ${(props: any) => props.padding || "12px 18px"};
   font-size: 15px;
   border-radius: 4px;
   border:1px solid #222;
   background: #222;
   color: #03a9f3;
-  margin: ${({ margin }) => margin};
+  margin: ${(props: any) => props.margin};
 
   &:hover {
     color: #f1f1f1;

@@ -2,6 +2,7 @@ import { compose, setDisplayName } from "composable-styled-components";
 import Preview from "~components/Body/Preview";
 import Note from "~components/Body/Note";
 import OutsideLink from "~components/Navigation/OutsideLink";
+import { FC } from "~types";
 
 const NamedButton = compose.button(setDisplayName("NamedButton"))`
   background: #dc004e;
@@ -47,7 +48,7 @@ export const exampleCode = `const NamedButton = compose.button(
 render(<NamedButton />)
 `;
 
-const SetDisplayNameExample = () => (
+const SetDisplayNameExample: FC = () => (
   <>
     <Preview code={exampleCode}>
       <NamedButton data-testid="display-name-button">pink button</NamedButton>

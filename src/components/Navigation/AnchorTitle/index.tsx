@@ -7,10 +7,12 @@ import {
 } from "composable-styled-components";
 import PropTypes from "prop-types";
 import Link from "~components/Navigation/Link";
+import { AnchorTitleProps } from "~interfaces";
+import { FC } from "~types";
 
 const Anchor = compose.h1(
   setDisplayName("Anchor"),
-  withAttributes(props => ({
+  withAttributes((props: any) => ({
     id: props.id
   })),
   withPropTypes({
@@ -23,7 +25,7 @@ const Anchor = compose.h1(
   margin-top: 75px;
   margin-bottom: 20px;
   letter-spacing: 2px;
-  color: ${({ color }) => color || "black"};
+  color: ${(props: any) => props.color || "black"};
 
   a {
     opacity: 0;
@@ -36,7 +38,12 @@ const Anchor = compose.h1(
   }
 `;
 
-const AnchorTitle = ({ ariaLabel, id, children, color }) => (
+const AnchorTitle: FC<AnchorTitleProps> = ({
+  ariaLabel,
+  id,
+  children,
+  color
+}) => (
   <Anchor color={color} id={id}>
     {children}
     <Link
@@ -49,12 +56,5 @@ const AnchorTitle = ({ ariaLabel, id, children, color }) => (
     </Link>
   </Anchor>
 );
-
-AnchorTitle.propTypes = {
-  ariaLabel: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-  color: PropTypes.string
-};
 
 export default AnchorTitle;

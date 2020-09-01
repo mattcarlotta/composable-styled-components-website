@@ -1,21 +1,20 @@
 import Head from "next/head";
-import PropTypes from "prop-types";
+import { HeaderProps } from "~interfaces";
+import { FC } from "~types";
 
 const { LOCALHOST } = process.env;
 
-const Header = ({
+const Header: FC<HeaderProps> = ({
   children,
-  description,
-  keywords,
+  description = "A lightweight composable wrapper for styled-components.",
   name,
   title,
-  type,
+  type = "website",
   url
 }) => (
   <Head>
     <title>{title} - Composable Styled Components</title>
     <link rel="canonical" href={`${LOCALHOST}${url}`} />
-    {keywords && <meta name="keywords" content={keywords} />}
     {name && (
       <meta name="name" content={`composable-styled-components: ${name}`} />
     )}
@@ -26,24 +25,5 @@ const Header = ({
     {children}
   </Head>
 );
-
-Header.propTypes = {
-  children: PropTypes.node,
-  description: PropTypes.string,
-  keywords: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.string),
-    PropTypes.string
-  ]),
-  name: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string,
-  type: PropTypes.string
-};
-
-Header.defaultProps = {
-  description: "A lightweight composable wrapper for styled-components.",
-  type: "website",
-  url: ""
-};
 
 export default Header;

@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import Note from "~components/Body/Note";
 import Preview from "~components/Body/Preview";
 import OutsideLink from "~components/Navigation/OutsideLink";
+import { FC } from "~types";
 
 const Button = compose.button(
   setDisplayName("Button"),
@@ -76,7 +77,7 @@ render(
   </Button>
 );`;
 
-const WithPropTypesExample = () => (
+const WithPropTypesExample: FC = () => (
   <>
     <Preview code={exampleCode}>
       <Button

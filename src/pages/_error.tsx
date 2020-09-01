@@ -2,8 +2,9 @@ import Head from "next/head";
 import Center from "~components/Body/Center";
 import Flex from "~components/Body/Flex";
 import Link from "~components/Navigation/Link";
+import { FC } from "~types";
 
-const NotFound = () => (
+const NotFound: FC = () => (
   <Flex justify="center" style={{ height: "70vh" }}>
     <Head>
       <title>Server Error - Matt Carlotta</title>

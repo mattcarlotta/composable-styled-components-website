@@ -5,6 +5,7 @@ import {
   withProps
 } from "composable-styled-components";
 import Preview from "~components/Body/Preview";
+import { FC } from "~types";
 
 const Button = compose.button(
   setDisplayName("Button"),
@@ -38,7 +39,7 @@ const Button = compose.button(
 
 const ExtendedButton = extend(
   setDisplayName("ExtendedButton"),
-  withProps(props => ({
+  withProps((props: any) => ({
     ...props,
     onClick: props.alert ? props.onClick : null
   }))
@@ -96,7 +97,7 @@ render(
   </>
 );`;
 
-const WithPropsExample = () => (
+const WithPropsExample: FC = () => (
   <Preview code={exampleCode}>
     <Button data-testid="with-props-default-button">Alert</Button>
     <ExtendedButton data-testid="with-props-noalert-button">

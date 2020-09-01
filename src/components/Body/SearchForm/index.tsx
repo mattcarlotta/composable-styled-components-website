@@ -5,22 +5,40 @@ import Button from "~components/Body/Button";
 import FlexEnd from "~components/Body/FlexEnd";
 import SearchBox from "~components/Body/SearchBox";
 import Form from "./Form";
+import { FC } from "~types";
 
 const { NODE_ENV } = process.env;
 
-const SearchForm = () => {
-  const inputRef = React.useRef(null);
+type inputProps = {
+  close: () => void;
+  destroy: () => void;
+  getVal: () => void;
+  getWrapper: () => void;
+  open: () => void;
+  setVal: () => void;
+};
+
+interface suggestionProps {
+  url: string;
+}
+
+const SearchForm: FC = () => {
+  const inputRef = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
-    docsearch({
+    window.docsearch({
       apiKey: "87fbefd9926b69909e3b806c4c9eb26a",
       indexName: "mattcarlotta_composable",
       inputSelector: '[id="search-docs"]',
       debug: NODE_ENV !== "production",
-      handleSelected: (input, event, { url }) => {
+      handleSelected: (
+        input: inputProps,
+        event: MouseEvent,
+        { url }: suggestionProps
+      ) => {
         event.stopPropagation();
         input.close();
-        inputRef.current.blur();
+        if (inputRef && inputRef.current) inputRef.current.blur();
         Router.push(url.replace(/^.+.sh/, ""));
       }
     });

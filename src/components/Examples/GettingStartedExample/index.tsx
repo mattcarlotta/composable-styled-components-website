@@ -1,5 +1,6 @@
 import { compose, nest, setDisplayName } from "composable-styled-components";
 import Preview from "~components/Body/Preview";
+import { FC } from "~types";
 
 const Wrapper = compose.section(setDisplayName("Wrapper"))`
   border: 2px solid palevioletred;
@@ -43,7 +44,7 @@ render(
   </Headline> 
 );`;
 
-const GettingStartedExample = () => (
+const GettingStartedExample: FC = () => (
   <Preview code={exampleCode}>
     <Headline data-testid="nest-headline">Hello!</Headline>
   </Preview>
