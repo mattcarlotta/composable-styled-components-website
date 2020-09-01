@@ -26,21 +26,23 @@ const SearchForm: FC = () => {
   const inputRef = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
-    window.docsearch({
-      apiKey: "87fbefd9926b69909e3b806c4c9eb26a",
-      indexName: "mattcarlotta_composable",
-      inputSelector: '[id="search-docs"]',
-      debug: NODE_ENV !== "production",
-      handleSelected: (
-        input: inputProps,
-        event: MouseEvent,
-        { url }: suggestionProps
-      ) => {
-        event.stopPropagation();
-        input.close();
-        inputRef?.current?.blur();
-        Router.push(url.replace(/^.+.sh/, ""));
-      }
+    import("docsearch.js").then(mdl => {
+      mdl.default({
+        apiKey: "87fbefd9926b69909e3b806c4c9eb26a",
+        indexName: "mattcarlotta_composable",
+        inputSelector: '[id="search-docs"]',
+        debug: NODE_ENV !== "production",
+        handleSelected: (
+          input: inputProps,
+          event: MouseEvent,
+          { url }: suggestionProps
+        ) => {
+          event.stopPropagation();
+          input.close();
+          inputRef?.current?.blur();
+          Router.push(url.replace(/^.+.sh/, ""));
+        }
+      });
     });
   }, []);
 
