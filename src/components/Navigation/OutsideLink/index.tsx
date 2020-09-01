@@ -21,7 +21,7 @@ const OutsideLink = compose.a(
     )
   })
 )`
-  color: #036ef3;
+  color: #0560d1;
   white-space: nowrap;
   text-decoration: none;
   transition: all 200ms ease-in-out;
@@ -33,7 +33,7 @@ const OutsideLink = compose.a(
   }
 
   &:focus {
-    color: #036ef3;
+    color: #0560d1;
     outline: none;
     border: 0;
   }

@@ -59,7 +59,7 @@ const CustomLink = extend(
   }),
   withStyles(css`
     color: ${(props: any) => {
-      if (props.dark) return "#036ef3";
+      if (props.dark) return "#0560d1";
       if (props.light) return "#03a9f3";
       return "#000000a6";
     }};
