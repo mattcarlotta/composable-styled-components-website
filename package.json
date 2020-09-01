@@ -1,0 +1,76 @@
+{
+  "name": "composable-styled-components-website",
+  "version": "0.0.18",
+  "description": "Composable Styled Components Website",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "next build && next export",
+    "dev": "next dev -p 8080",
+    "lint": "eslint . --ext ts --ext tsx --ext js",
+    "stagebuild": "NODE_ENV=production inStaging=true next build",
+    "start": "next start -p 8080",
+    "stage": "NODE_ENV=production inStaging=true next start -p 8080",
+    "test:e2e": "NODE_ENV=staging cypress open --project ./e2e",
+    "test:e2erun": "npm run docs:stagebuild && concurrently --success first --kill-others \"npm run start\" \"NODE_ENV=production cypress run --config video=false --project ./e2e\"",
+    "typecheck": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattcarlotta/composable-styled-components-website.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "compose",
+    "styled-components"
+  ],
+  "author": "Matt Carlotta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattcarlotta/composable-styled-components-website.git/issues"
+  },
+  "homepage": "https://composable.mattcarlotta.sh",
+  "dependencies": {
+    "composable-styled-components": "^0.0.17",
+    "next": "^9.5.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
+    "react-syntax-highlighter": "^13.5.1",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.2",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "^5.1.2",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "address": "^1.1.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "browserslist": "^4.14.0",
+    "concurrently": "^5.3.0",
+    "cypress": "^5.0.0",
+    "docsearch.js": "^2.6.3",
+    "eslint": "^7.8.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "prettier": "^2.1.1",
+    "react-dev-utils": "^10.2.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.2",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpackbar": "^4.0.0"
+  }
+}

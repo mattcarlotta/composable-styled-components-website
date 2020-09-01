@@ -1,0 +1,11 @@
+# Logs
+logs
+*.log*
+.idea
+node_modules
+/.vscode/
+ts-build/
+/dist
+coverage
+.cc_token
+.next
