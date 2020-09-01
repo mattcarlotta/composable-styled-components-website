@@ -57,24 +57,4 @@ const ComposedButton = compose.button(
   }
 `;
 
-// ComposedButton.propTypes = {
-//   className: PropTypes.string,
-//   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-//   disabled: PropTypes.bool,
-//   onBlur: PropTypes.func,
-//   onClick: PropTypes.func,
-//   onContextMenu: PropTypes.func,
-//   onFocus: PropTypes.func,
-//   onMouseDown: PropTypes.func,
-//   onMouseEnter: PropTypes.func,
-//   onMouseLeave: PropTypes.func,
-//   onMouseOver: PropTypes.func,
-//   onTouchStart: PropTypes.func,
-//   onTouchEnd: PropTypes.func,
-//   style: PropTypes.objectOf(
-//     PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-//   ),
-//   type: PropTypes.string
-// };
-
 export default ComposedButton;

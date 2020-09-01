@@ -18,9 +18,9 @@ type inputProps = {
   setVal: () => void;
 };
 
-interface suggestionProps {
+type suggestionProps = {
   url: string;
-}
+};
 
 const SearchForm: FC = () => {
   const inputRef = React.useRef<HTMLElement>(null);
@@ -38,7 +38,7 @@ const SearchForm: FC = () => {
       ) => {
         event.stopPropagation();
         input.close();
-        if (inputRef && inputRef.current) inputRef.current.blur();
+        inputRef?.current?.blur();
         Router.push(url.replace(/^.+.sh/, ""));
       }
     });

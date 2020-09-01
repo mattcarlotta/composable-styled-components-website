@@ -3,10 +3,11 @@ import { useRouter } from "next/router";
 import Dot from "~components/Body/Dot";
 import FlexStart from "~components/Body/FlexStart";
 import Link from "~components/Navigation/Link";
+import { FC } from "~types";
 
-const HeaderTabs = () => {
+const HeaderTabs: FC = () => {
   const { pathname } = useRouter();
-  const [activeTab, setActiveTab] = React.useState(pathname);
+  const [activeTab, setActiveTab] = React.useState<string>(pathname);
 
   React.useEffect(() => {
     setActiveTab(pathname);
