@@ -6,6 +6,7 @@ import V0011 from "~components/Releases/V0011";
 import V0012 from "~components/Releases/V0012";
 import V0017 from "~components/Releases/V0017";
 import V0018 from "~components/Releases/V0018";
+import V0019 from "~components/Releases/V0019";
 import { FC } from "~types";
 
 const Releases: FC = () => (
@@ -20,6 +21,7 @@ const Releases: FC = () => (
     <Subtitle textalign="center">
       You can find the latest releases and any change logs here.
     </Subtitle>
+    <V0019 />
     <V0018 />
     <V0017 />
     <V0012 />
