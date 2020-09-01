@@ -71,12 +71,13 @@ const CustomLink = extend(
     transition: all 200ms ease-in-out;
     padding: ${(props: any) => (props.nopadding ? "0" : "4px 8px")};
     border-radius: 2px;
+    border: 1px solid transparent;
     cursor: pointer;
     ${(props: any) =>
       props.active &&
       `
       color: #f1f1f1;
-      background: #0f7ae5;
+      border-color: #f1f1f1;
     `};
 
     &:hover {
@@ -94,7 +95,8 @@ const CustomLink = extend(
         return "#000000a6";
       }};
       outline: none;
-      border: 0;
+      background: transparent;
+      border-color: #f1f1f1;
     }
   `)
 )(LinkComponent);
