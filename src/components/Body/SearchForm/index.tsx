@@ -47,7 +47,12 @@ const SearchForm: FC = () => {
   return (
     <FlexEnd className="right-nav">
       <Form>
-        <Button margin="0 8px 0" padding="0px 4px" htmlFor="search-docs">
+        <Button
+          aria-label="Search website button"
+          margin="0 8px 0"
+          padding="0px 4px"
+          htmlFor="search-docs"
+        >
           <FaSearch style={{ fontSize: 15 }} />
         </Button>
         <SearchBox ref={inputRef} className="doc-search" />

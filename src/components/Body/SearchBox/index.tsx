@@ -10,7 +10,7 @@ const SearchBox = compose.input(
     id: "search-docs",
     placeholder: "Search...",
     type: "search",
-    "aria-label": "search input"
+    "aria-label": "Search website input box"
   })
 )`
   height: 30px;
