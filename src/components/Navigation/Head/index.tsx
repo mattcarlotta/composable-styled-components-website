@@ -10,7 +10,7 @@ const Header: FC<HeaderProps> = ({
   name,
   title,
   type = "website",
-  url
+  url = ""
 }) => (
   <Head>
     <title>{title} - Composable Styled Components</title>
